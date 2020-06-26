@@ -11,7 +11,14 @@ class MyApp extends StatelessWidget {
       appBar: AppBar(
         title: Text('First app bar!'),
       ),
-      body: Text('some dummy text '),
+      body: Column(
+        children: [
+          Text('Select your answer'),
+          RaisedButton(child: Text('Answer 1 '), onPressed: null,),
+          RaisedButton(child: Text('Answer 2 '), onPressed: null,),
+          RaisedButton(child: Text('Answer 3 '), onPressed: null,)
+        ]
+      ),
     ));
     //return MaterialApp(home: Text('Hello world'));
   }
