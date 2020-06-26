@@ -18,8 +18,10 @@ class MyApp extends StatelessWidget {
         children: [
           Text('Select your answer'),
           RaisedButton(child: Text('Answer 1 '), onPressed: answerQuestion,),
-          RaisedButton(child: Text('Answer 2 '), onPressed: answerQuestion,),
-          RaisedButton(child: Text('Answer 3 '), onPressed: answerQuestion,),
+          RaisedButton(child: Text('Answer 2 '), onPressed: ()=>print('answered 2'),),
+          RaisedButton(child: Text('Answer 3 '), onPressed: (){
+            print('answer 3');
+          },),
         ]
       ),
     ));
