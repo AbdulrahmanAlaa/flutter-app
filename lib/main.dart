@@ -4,26 +4,42 @@ import 'package:flutter/material.dart';
 void main(List<String> args) => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  void answerQuestion(){
+  int questionIndex = 0;
+
+  void answerQuestion() {
+    questionIndex++;
     print('answered the questions !!');
   }
+
   @override
   Widget build(BuildContext context) {
+    var questions = [
+      'What\'s your first name?',
+      'What\'s your father name?',
+      'What\'s your pet name?',
+    ];
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
         title: Text('First app bar!'),
       ),
-      body: Column(
-        children: [
-          Text('Select your answer'),
-          RaisedButton(child: Text('Answer 1 '), onPressed: answerQuestion,),
-          RaisedButton(child: Text('Answer 2 '), onPressed: ()=>print('answered 2'),),
-          RaisedButton(child: Text('Answer 3 '), onPressed: (){
+      body: Column(children: [
+        Text(questions.elementAt(questionIndex)),
+        RaisedButton(
+          child: Text('Answer 1 '),
+          onPressed: answerQuestion,
+        ),
+        RaisedButton(
+          child: Text('Answer 2 '),
+          onPressed: () => print('answered 2'),
+        ),
+        RaisedButton(
+          child: Text('Answer 3 '),
+          onPressed: () {
             print('answer 3');
-          },),
-        ]
-      ),
+          },
+        ),
+      ]),
     ));
     //return MaterialApp(home: Text('Hello world'));
   }
