@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './quesion.dart';
+
 //arrow syntax
 void main(List<String> args) => runApp(MyApp());
 
@@ -33,7 +35,7 @@ class _MyAppState extends State<MyApp> {
         title: Text('First app bar!'),
       ),
       body: Column(children: [
-        Text(questions.elementAt(_questionIndex)),
+        Question(questions.elementAt(_questionIndex)),
         RaisedButton(
           child: Text('Answer 1 '),
           onPressed: _answerQuestion,
